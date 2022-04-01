@@ -1,0 +1,42 @@
+{
+  "name": "@ull-esit-pl-2122/egg-interpreter-template",
+  "version": "1.0.0",
+  "description": "Lab for language processors: egg interpreter",
+  "main": "src/egg-interpreter.js",
+  "bin": {
+    "egg": "bin/egg.js",
+    "evm": "bin/evm.js"
+  },
+  "scripts": {
+    "test": "nyc --reporter=lcov --reporter=text-summary --report-dir=docs/coverage -o docs mocha",
+    "doc": "jsdoc -d docs -c jsdoc.json"
+  },
+  "keywords": [
+    "ULL",
+    "parsing",
+    "AST"
+  ],
+  "author": "AluXXXX <aluXXX@ull.edu.es> (https://crguezl.github.io/)",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "dependencies": {
+    "@crguezl/eloquentjsegg": "^1.2.6",
+    "@ull-esit-pl-2122/egg-parser-solution": "^1.0.3",
+    "@ull-esit-pl-2122/lexer-generator-solution": "^3.1.3",
+    "commander": "^9.0.0",
+    "nearley": "^2.20.1",
+    "node-fetch": "^2.6.7",
+    "xregexp": "^5.1.0"
+  },
+  "devDependencies": {
+    "@ull-esit-pl/example2test": "^1.1.1",
+    "chai": "^4.3.6",
+    "jsdoc": "^3.6.10",
+    "mocha": "^9.2.2",
+    "nyc": "^15.1.0",
+    "tui-jsdoc-template": "^1.2.2"
+  }
+}

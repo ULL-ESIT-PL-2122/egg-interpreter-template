@@ -1,0 +1,190 @@
+{
+  "type": "apply",
+  "operator": {
+    "type": "word",
+    "offset": 0,
+    "lineBreaks": 0,
+    "line": 1,
+    "col": 1,
+    "name": "do"
+  },
+  "args": [
+    {
+      "type": "apply",
+      "operator": {
+        "type": "word",
+        "offset": 6,
+        "lineBreaks": 0,
+        "line": 2,
+        "col": 3,
+        "name": "def"
+      },
+      "args": [
+        {
+          "type": "word",
+          "offset": 10,
+          "lineBreaks": 0,
+          "line": 2,
+          "col": 7,
+          "name": "x"
+        },
+        {
+          "type": "value",
+          "value": -4.5,
+          "raw": "-4.5"
+        }
+      ]
+    },
+    {
+      "type": "apply",
+      "operator": {
+        "type": "word",
+        "offset": 22,
+        "lineBreaks": 0,
+        "line": 3,
+        "col": 3,
+        "name": "if"
+      },
+      "args": [
+        {
+          "type": "apply",
+          "operator": {
+            "type": "word",
+            "offset": 30,
+            "lineBreaks": 0,
+            "line": 4,
+            "col": 5,
+            "name": "||"
+          },
+          "args": [
+            {
+              "type": "apply",
+              "operator": {
+                "type": "word",
+                "offset": 41,
+                "lineBreaks": 0,
+                "line": 5,
+                "col": 8,
+                "name": "<"
+              },
+              "args": [
+                {
+                  "type": "word",
+                  "offset": 43,
+                  "lineBreaks": 0,
+                  "line": 5,
+                  "col": 10,
+                  "name": "x"
+                },
+                {
+                  "type": "value",
+                  "value": 0,
+                  "raw": "0"
+                }
+              ]
+            },
+            {
+              "type": "apply",
+              "operator": {
+                "type": "word",
+                "offset": 57,
+                "lineBreaks": 0,
+                "line": 6,
+                "col": 8,
+                "name": "=="
+              },
+              "args": [
+                {
+                  "type": "word",
+                  "offset": 60,
+                  "lineBreaks": 0,
+                  "line": 6,
+                  "col": 11,
+                  "name": "x"
+                },
+                {
+                  "type": "value",
+                  "value": 0,
+                  "raw": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "apply",
+          "operator": {
+            "type": "word",
+            "offset": 76,
+            "lineBreaks": 0,
+            "line": 8,
+            "col": 5,
+            "name": "def"
+          },
+          "args": [
+            {
+              "type": "word",
+              "offset": 80,
+              "lineBreaks": 0,
+              "line": 8,
+              "col": 9,
+              "name": "z"
+            },
+            {
+              "type": "value",
+              "value": 5,
+              "raw": "5"
+            }
+          ]
+        },
+        {
+          "type": "apply",
+          "operator": {
+            "type": "word",
+            "offset": 91,
+            "lineBreaks": 0,
+            "line": 9,
+            "col": 5,
+            "name": "def"
+          },
+          "args": [
+            {
+              "type": "word",
+              "offset": 95,
+              "lineBreaks": 0,
+              "line": 9,
+              "col": 9,
+              "name": "z"
+            },
+            {
+              "type": "value",
+              "value": 9,
+              "raw": "9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "apply",
+      "operator": {
+        "type": "word",
+        "offset": 107,
+        "lineBreaks": 0,
+        "line": 11,
+        "col": 3,
+        "name": "print"
+      },
+      "args": [
+        {
+          "type": "word",
+          "offset": 113,
+          "lineBreaks": 0,
+          "line": 11,
+          "col": 9,
+          "name": "z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "apply",
+  "operator": {
+    "type": "apply",
+    "operator": {
+      "type": "word",
+      "offset": 0,
+      "lineBreaks": 0,
+      "line": 1,
+      "col": 1,
+      "name": "f"
+    },
+    "args": [
+      {
+        "type": "value",
+        "value": 1,
+        "raw": "1"
+      }
+    ]
+  },
+  "args": [
+    {
+      "type": "value",
+      "value": 2,
+      "raw": "2"
+    }
+  ]
+}
