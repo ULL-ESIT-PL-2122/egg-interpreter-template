@@ -4,8 +4,7 @@ let fs = require("fs");
 
 
 const {specialForms, topEnv, } = require("./registry.js");
-const {Value, Word, Apply, } = require("./ast.js");
-const { j2a, json2AST } = require('./j2a');
+const { json2AST } = require('./j2a');
 
 const  parser = require('@ull-esit-pl-2122/egg-parser-solution'); // Substitute by your egg-parser-aluXXX
 const {parse, parseFromFile} = parser;
@@ -32,33 +31,10 @@ specialForms[':='] = specialForms['def'] = specialForms['define'] = function(arg
 };
 
 specialForms['->'] =specialForms['fun'] = function(args, env) {
-  if (!args.length) {
-    throw new SyntaxError('Functions need a body.')
-  }
-
-  function name(expr) {
-    if (expr.type != 'word') {
-      throw new SyntaxError('Arg names must be words');
-    }
-
-    return expr.name;
-  }
-
-  let argNames = args.slice(0, args.length - 1).map(name);
-  let body = args[args.length - 1];
+   /* fill the code */
 
   return function(...args) {
-    // debugger;
-    if (args.length > argNames.length) {
-      throw new TypeError(`Wrong number of arguments. Called with ${args.length} arguments and declared ${argNames.length} parameters`);
-    }
-
-    let localEnv = Object.create(env);
-    for (let i = 0; i < args.length; i++) {
-      localEnv[argNames[i]] = args[i];
-    }
-
-    return body.evaluate(localEnv);
+    /* fill the code */
   };
 };
 
@@ -159,25 +135,19 @@ function run(program) {
   let ast = parse(program);
   let tree = json2AST(ast);
 
-  // debugger;
-  const { removeMonkeyPatch} = require("./monkey-patch.js");
   let result = tree.evaluate(env);
-  removeMonkeyPatch();
+
   return result;
 }
 
 function runFromFile(fileName) {
   try {
-    //debugger;
     const ast = parseFromFile(fileName);
     let tree = json2AST(ast);
     let env = Object.create(topEnv);
-    const { removeMonkeyPatch } = require("./monkey-patch.js");
 
-    // console.log(program);
-    // console.log(ins(tree));
     let result = tree.evaluate(env);
-    removeMonkeyPatch();
+
     return result;
   }
   catch (err) {
@@ -185,22 +155,15 @@ function runFromFile(fileName) {
   }
 }
 
-// Lift the JSON to an AST
-// debugger;
-
 function runFromEVM(fileName) {
   try {
-    // debugger;
     let json = fs.readFileSync(fileName, 'utf8');
     let treeFlat = JSON.parse(json);
     let tree = json2AST(treeFlat);
-    // debugger;
+
     let env = Object.create(topEnv);
-    // console.log(program);
-    // console.log(ins(tree));
-    const { removeMonkeyPatch } = require("./monkey-patch.js");
     let result = tree.evaluate(env);
-    removeMonkeyPatch();
+
     return result;
   }
   catch (err) {

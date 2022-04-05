@@ -1,16 +1,20 @@
+let inspect = require("util").inspect;
+let ins = (x) => inspect(x, {depth: null});
 let readline = require('readline');
 let egg  = require('./egg-interpreter.js');
 const {eggExit, help} = require("./extensions"); // extend eggvm
 let topEnv = egg.topEnv;
+const json2AST = egg.json2AST;
 let specialForms = egg.specialForms;
 let parser = egg.parser;
-const {DEFAULT, red} = require("./colors.js");
+let parse = parser.parse;
+const {BLUE, RED, DEFAULT, blue, red} = require("./colors.js");
 const PROMPT = DEFAULT+"> ";
 
 // Check if program is empty
 const ALLWHITE = new RegExp("^"+egg.parser.SPACE.source+"$");
 
-const getTokens = () => parser.getTokens;
+const getTokens = parser.getTokens;
 const parBalance = parser.parBalance;
 
 const put = egg.topEnv.print; 
@@ -19,27 +23,7 @@ function eggRepl() {
   let program = "";
   let stack = 0;
   try {
-    // rl interface
-    let rl = readline.createInterface({input: process.stdin, output: process.stdout, completer});
-    rl.prompt(PROMPT); console.log("Version "+topEnv["version"]);
-    rl.prompt();
-
-    rl.on('line', function(line) {
-      stack += parBalance(line);
-      /* ... fill the code ... */
-    });
-    rl.on('close', eggExit);
-    
-    rl.on('SIGINT', () => {
-      console.log(red("Expression discarded!"));
-      program = "";
-      stack = 0;
-      rl.clearLine(process.stdout)
-      rl.setPrompt(PROMPT);
-      rl.prompt();
-    });
-   
-
+   /* ... fill the code ... */
   }
   catch (err) {
     console.log(red(err));
@@ -57,11 +41,7 @@ function eggRepl() {
         - The substring that was used for the matching.
   */
   function completer(line) {
-    let tokens = getTokens(line);
-    var word = tokens.filter((t) => t && t.type === 'WORD').pop().value;
-    
-    let allKeys = Object.keys(specialForms).concat(Object.keys(topEnv));
-    var hits = allKeys.filter((key) => key.startsWith(word));
+    /* ... fill the code ... */
     return [hits, word];
   }
 }
