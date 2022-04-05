@@ -23,16 +23,16 @@
     "access": "restricted"
   },
   "dependencies": {
-    "@crguezl/eloquentjsegg": "^1.2.6",
-    "@ull-esit-pl-2122/egg-parser-solution": "^1.0.3",
-    "@ull-esit-pl-2122/lexer-generator-solution": "^3.1.3",
+    "@crguezl/eloquentjsegg": "*",
+    "@ull-esit-pl-2122/egg-parser-solution": "*",
+    "@ull-esit-pl-2122/lexer-generator-solution": "*",
     "commander": "^9.0.0",
     "nearley": "^2.20.1",
     "node-fetch": "^2.6.7",
     "xregexp": "^5.1.0"
   },
   "devDependencies": {
-    "@ull-esit-pl/example2test": "^1.1.1",
+    "@ull-esit-pl/example2test": "*",
     "chai": "^4.3.6",
     "jsdoc": "^3.6.10",
     "mocha": "^9.2.2",
